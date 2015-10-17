@@ -1,5 +1,10 @@
-<?php 
-$text = 'Hello World.';
-?>
+<?php
 
-<input type="text" name="name" value="<?php echo $text; ?>">
+/*
+Author : Mahbubur Rahman
+Date: 17/10/15
+*/
+
+// Uses echo language construct to output the text "Hello World." to the browser.
+echo 'Hello World.';
+?>
