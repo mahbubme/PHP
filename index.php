@@ -25,6 +25,19 @@ function displayDate($day, $date, $year) {
 
 displayDate('Sunday', 18, 2015);
 
+// Functions with a return value
 
+function addTwo($number1, $number2) {
+    $result = $number1 + $number2;
+    return $result;
+}
+
+function divide($number1, $number2) {
+    $result = $number1 / $number2;
+    return $result;
+}
+
+$sum = divide(addTwo(10, 10), addTwo(5, 5));
+echo $sum;
 
 ?>
