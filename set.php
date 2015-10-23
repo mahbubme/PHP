@@ -3,6 +3,7 @@
 // Setting PHP sessions
 session_start();
 
-echo $_SESSION['username'] = 'Mahbub';
+$_SESSION['username'] = 'Mahbub';
+$_SESSION['age'] = 21;
 
 ?>
