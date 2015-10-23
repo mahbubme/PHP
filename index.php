@@ -2,9 +2,9 @@
 
 // $_GET variables
 if (isset($_GET['day']) && isset($_GET['date']) && isset($_GET['year'])) {
-    $day = $_GET['day'];
-    $date = $_GET['date'];
-    $year = $_GET['year'];
+    $day = htmlentities($_GET['day']);
+    $date = htmlentities($_GET['date']);
+    $year = htmlentities($_GET['year']);
     
     if (!empty($day) && !empty($date) && !empty($year)) {
         echo 'It is '.$day.' '.$date.' '.$year;
