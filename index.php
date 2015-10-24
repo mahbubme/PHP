@@ -36,7 +36,16 @@ if (@unlink($filename)) {
     echo 'File cannot be deleted.<br>';
 }
 
+// renaming file name
+$filename = 'filetorename.txt';
+$rand = rand(10000, 99999);
 
+if (@rename($filename, $rand.'.txt')) {
+    echo 'File <strong>'.$filename.'</strong> has been renamed to '.$rand.'.txt';
+}else {
+    echo 'Error renaming.';
+    
+}
 
 
 
