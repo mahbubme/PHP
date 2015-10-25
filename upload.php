@@ -2,20 +2,27 @@
 
 // Uploading files
 $name = $_FILES['file']['name'];
-// $size = $_FILES['file']['size'];
-// $type = $_FILES['file']['type'];
+$extension = strtolower(substr($name, strpos($name, '.') + 1));
+$type = $_FILES['file']['type'];
+$size = $_FILES['file']['size'];
 
+$max_size = 2000000;
 $tmp_name = $_FILES['file']['tmp_name'];
 
 if (isset($name)) {
     if (!empty($name)) {
-        $location = 'uploads/';
-        
-        if (move_uploaded_file($tmp_name, $location.$name)) {
-            echo 'File uploaded';
+        if (($type=='image/jpeg' || $type=='image/jpg') && ($extension=='jpg' || $extension=='jpeg') && $size<=$max_size) {
+            
+            $location = 'uploads/';
+            
+            if (move_uploaded_file($tmp_name, $location.$name)) {
+                echo 'File uploaded';
+            }else {
+                echo 'There was an error.';
+            }   
         }else {
-            echo 'There was an error.';
-        }
+            echo 'File must be jpg/jpeg/png and must be 2mb or less.';
+        }    
     }else {
         echo 'Please choose a file.';
     }
