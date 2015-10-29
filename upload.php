@@ -21,7 +21,7 @@ if (isset($name)) {
                 echo 'There was an error.';
             }   
         }else {
-            echo 'File must be jpg/jpeg/png and must be 2mb or less.';
+            echo 'File must be jpg/jpeg and must be 2mb or less.';
         }    
     }else {
         echo 'Please choose a file.';
