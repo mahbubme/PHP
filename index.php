@@ -1,18 +1,23 @@
 <?php 
 
-// Connecting to a Server and Database
-$conn_error = 'Could not connect to database.';
+// Select and query database.
+require('connect.inc.php');
 
-$mysql_host = 'localhost';
-$mysql_user = 'root';
-$mysql_pass = '';
+$query = "SELECT `food`, `calories` FROM `food` WHERE `healthy_unhealthy`='u' AND `calories`='700' ORDER BY `id` ASC";
 
-$mysql_db = 'a_database';
-
-if (!@mysql_connect($mysql_host, $mysql_user, $mysql_pass) || !@mysql_select_db($mysql_db)) {
-    echo $conn_error;
+if ($query_run = mysql_query($query)) {
+    if (mysql_num_rows($query_run)==NULL) {
+        echo 'No results found.';
+    }else {
+        while ($query_row = mysql_fetch_assoc($query_run)) {
+            $food = $query_row['food'];
+            $calories = $query_row['calories'];
+            
+            echo $food.' has '.$calories.'<br>';
+        }    
+    }
 }else {
-    echo 'Connected.';
+    echo mysql_error();
 }
 
 ?>
