@@ -6,17 +6,16 @@ session_start();
 if (!isset($_SESSION['secure'])) {
     $_SESSION['secure'] = rand(1000, 9999);
 }else {
-    if (isset($_POST['secure'])) {
-        if (!empty($_POST['secure'])) {
-            if ($_SESSION['secure']==$_POST['secure']) {
-                echo 'A match!';
-            }else {
-                echo 'Incorrect, try again.';
-                $_SESSION['secure'] = rand(1000, 9999);
-            }     
+    if (!empty($_POST['secure'])) {
+        if ($_SESSION['secure']==$_POST['secure']) {
+            echo 'A match!';
         }else {
-            echo 'Please input character.';
-        }
+            echo 'Incorrect, try again.';
+            $_SESSION['secure'] = rand(1000, 9999);
+        }     
+    }else {
+        echo 'Please input character.';
+        $_SESSION['secure'] = rand(1000, 9999);
     }
 }
 
