@@ -1,7 +1,7 @@
 <?php 
 
 // Scaling down images to thumbnails
-header('Content-type: image/jpeg');
+header('Content-Type: image/jpeg');
 
 if (isset($_GET['image'])) {
     echo $image = $_GET['image'];
@@ -18,7 +18,7 @@ if (isset($_GET['image'])) {
     $old_image = imagecreatefromjpeg($image);
     
     imagecopyresized($new_image, $old_image, 0, 0, 0, 0, $new_width, $new_height, $image_width, $image_height);
-    imagejpeg($new_image, $image.'.thumb.jpg');
+    imagejpeg($new_image, $image.'.thumb.jpg', 100);
     
 }
 
