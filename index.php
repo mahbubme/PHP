@@ -5,6 +5,7 @@
     <title>Ajax | Auto suggest application</title>
     <script type="text/javascript">
         function findmatch() {
+            var xmlhttp;
             if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
             }else {
@@ -17,7 +18,7 @@
                 }
             }
             
-            xmlhttp.open('GET', 'search.inc.php', true);
+            xmlhttp.open('GET', 'search.inc.php?search_text='+document.search.search_text.value, true);
             xmlhttp.send();
         }
     </script>
@@ -25,9 +26,9 @@
 <body>
     <form id="search" name=search>
         Type a name: <br> 
-        <input type="text" name="search_text" onkeydown="findmatch()" />
+        <input type="text" name="search_text" onkeyup="findmatch();" />
     </form>
     
-    <div id="resutls"></div>
+    <div id="results"></div>
 </body>
 </html>
