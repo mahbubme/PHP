@@ -3,7 +3,7 @@
 // create class
 class BankAccount {
     // Property of class
-    public $balance = 10.5;
+    public $balance = 0;
     
     // Method of class
     public function DisplayBalance() {
@@ -17,15 +17,27 @@ class BankAccount {
             $this->balance = $this->balance - $amount;    
         }
     }
+    
+    public function Deposit($amount) {
+        $this->balance = $this->balance + $amount;    
+    }
 }
 
-// new instance of class or object
+// new instances of class or object
 $alex = new BankAccount;
+$mahbub = new BankAccount;
 
-// Withdraw 5
-$alex->Withdraw(15);
+
+// Deposit balance
+$alex->Deposit(1000);
+$mahbub->Deposit(500);
+
+// Withdraw balance
+$alex->Withdraw(500);
+$mahbub->Withdraw(250);
 
 // Displaying balance
-echo $alex->DisplayBalance();
+echo $alex->DisplayBalance().'<br>';
+echo $mahbub->DisplayBalance();
 
 ?>
