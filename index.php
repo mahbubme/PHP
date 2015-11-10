@@ -4,6 +4,11 @@
 class BankAccount {
     // Property of class
     public $balance = 0;
+    public $type = '';
+    
+    public function SetType($input) {
+        $this->type = $input;    
+    }
     
     // Method of class
     public function DisplayBalance() {
@@ -23,21 +28,19 @@ class BankAccount {
     }
 }
 
-// new instances of class or object
-$alex = new BankAccount;
+class SavingsAccount extends BankAccount {
+}
+
 $mahbub = new BankAccount;
+$mahbub->SetType('18-25 Current');
+$mahbub->Deposit(100);
+$mahbub->Withdraw(20);
 
+$mahbub_savings = new SavingsAccount;
+$mahbub_savings->SetType('Super Saver');
+$mahbub_savings->Deposit(3000);
 
-// Deposit balance
-$alex->Deposit(1000);
-$mahbub->Deposit(500);
-
-// Withdraw balance
-$alex->Withdraw(500);
-$mahbub->Withdraw(250);
-
-// Displaying balance
-echo $alex->DisplayBalance().'<br>';
-echo $mahbub->DisplayBalance();
+echo $mahbub->type.' has '.$mahbub->DisplayBalance().'<br>';
+echo $mahbub_savings->type.' has '.$mahbub_savings->DisplayBalance();
 
 ?>
