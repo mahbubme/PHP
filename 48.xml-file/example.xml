@@ -1,0 +1,34 @@
+<producers>
+    <producer>
+        <name>Mahbub</name>
+        <age>21</age>
+        <show>
+            <showname>First show</showname>
+            <showdate>12th December, 2015</showdate>
+        </show>
+        <show>
+            <showname>Second show</showname>
+            <showdate>13th December, 2015</showdate>
+        </show>
+        <show>
+            <showname>3rd show</showname>
+            <showdate>13th July, 2015</showdate>
+        </show>
+    </producer>
+    <producer>
+        <name>Billy</name>
+        <age>16</age>
+    </producer>
+    <producer>
+        <name>Dale</name>
+        <age>49</age>
+    </producer>
+    <producer>
+        <name>Josh</name>
+        <age>30</age>
+        <show>
+            <showname>Josh show</showname>
+            <showdate>21th December, 2015</showdate>
+        </show>
+    </producer>
+</producers>
